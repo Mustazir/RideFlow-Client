@@ -13,7 +13,7 @@ const Footer = () => {
                                 alt="RideFlow"
                                 className="w-12 h-12"
                             />
-                            <span className="text-xl font-bold text-white">
+                            <span className="text-xl font-bold text-black">
                             RideFlow
                             </span>
                         </div>
@@ -88,3 +88,6 @@ const Footer = () => {
 };
 
 export default Footer;
+
+
+// 
