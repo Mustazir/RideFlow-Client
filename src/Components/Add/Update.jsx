@@ -80,7 +80,7 @@ const Update = () => {
     }
 
     return (
-        <div style={{ backgroundImage: "url('/moto-bg.jpg')" }} className="flex flex-col items-center p-8">
+        <div style={{ backgroundImage: "url('/moto-bg.jpg')" }} className="flex flex-col items-center p-8 pt-24">
             <h1 className="text-3xl font-bold text-center mb-6">Update {formData.carModel}</h1>
             <div className="w-full max-w-2xl bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-8 shadow-lg">
                 <form onSubmit={handleSubmit} className="space-y-4">

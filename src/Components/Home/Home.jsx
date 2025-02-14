@@ -8,6 +8,7 @@ import Extra from './Extra';
 import SpecialOffers from './SpecialOffers';
 import Challenging from './Challenging';
 import CarMaintenanceTips from './Challenging';
+import ReviewSection from './ReviewSection';
 
 
 
@@ -21,13 +22,14 @@ const Home = () => {
         </div>
     }
     return (
-        <div>
+        <div className='md:pt-16'>
             <Banner></Banner>
             <WhyChoseUs></WhyChoseUs>
             <Cars cars={datas}></Cars>
             <Extra></Extra>
             <SpecialOffers></SpecialOffers>
             <CarMaintenanceTips></CarMaintenanceTips>
+            <ReviewSection></ReviewSection>
 
         </div>
     );

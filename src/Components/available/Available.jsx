@@ -34,7 +34,7 @@ const Available = () => {
     });
 
     return (
-        <div className="available-cars max-w-screen-2xl mx-auto mt-20">
+        <div className="available-cars max-w-screen-2xl mx-auto pt-24 ">
           
             <div className="controls flex md:flex-row flex-col justify-between items-center mb-20">
                 <input

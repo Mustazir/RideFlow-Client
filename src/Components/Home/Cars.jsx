@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Cars = ({ cars }) => {
-  console.log(cars)
+
   return (
-    <div className="px-4 py-8 mt-44 mb-20">
-      <h2 className="text-4xl font-bold mb-20  text-center">Recent Listings</h2>
+    <div className="px-4 py-8 my-7 ">
+      <h2 className="text-4xl font-bold mb-8  text-center">Recent Listings</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-screen-2xl mx-auto">
         {cars.slice(0, 6).map((car) => (
           <div
@@ -31,12 +32,12 @@ const Cars = ({ cars }) => {
                 </p>
                 <p className="text-gray-600">Bookings: {car.bookingCount}</p>
               </div>
-              <button
-                className="mt-4 w-full bg-primary text-white py-2   transition"
+              <Link to={`/car/${car._id}`}
+                className="mt-4 w-full bg-primary text-white p-2 transition"
                 disabled={!car.availability}
               >
                 {car.availability ? "Book Now" : "Unavailable"}
-              </button>
+              </Link>
             </div>
           </div>
         ))}

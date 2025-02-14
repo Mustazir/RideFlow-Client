@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 import Button from "../Shared/Button";
+import bannerr from '../../assets/New folder/banner.jpg'
 
 
 const Banner = () => {
     return (
-        <section className="relative w-full h-96">
+        <section className="relative w-full h-96 pt-24">
             
-            <img src="/banner.jpg" className="absolute top-0 left-0 w-full h-full object-cover" alt="" />
+            <img src={bannerr} className="absolute top-0 left-0 w-full h-full object-cover" alt="" />
 
             <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
 

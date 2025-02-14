@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import imgcg from '../../assets/c1.jpg'
 
 const Extra = () => {
     return (
@@ -8,7 +9,7 @@ const Extra = () => {
                 <div className="flex flex-row gap-5 w-full lg:w-1/2">
                     
                     <motion.img
-                        src="../../../public/c1.jpg" 
+                        src={imgcg} 
                         alt="Car Logo"
                         className="shadow-lg h-64 md:h-96 object-cover"
                         initial={{ opacity: 0, x: -50 }}

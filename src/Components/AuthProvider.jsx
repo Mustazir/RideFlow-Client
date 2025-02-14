@@ -2,6 +2,7 @@ import React, { createContext, useEffect, useState } from 'react';
 import { GoogleAuthProvider } from "firebase/auth";
 import {  createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { auth } from './Firebase.config';
+import axios from 'axios';
 
 const provider = new GoogleAuthProvider();
 export const AuthContext=createContext(null)
@@ -31,18 +32,45 @@ const AuthProvider = ({children}) => {
     const handelSignin=(email,pass)=>{
         return signInWithEmailAndPassword(auth, email, pass)
     }
-    useEffect(()=>{
-        const unsub=onAuthStateChanged(auth,currentUser=>{
-            
-            setUser(currentUser)
-            setLoading(false)
-            
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
+            console.log('CurrentUser -->', currentUser);
+            console.log("API URL:", import.meta.env.VITE_API_URL); // ✅ Check if VITE_API_URL is correct
+    
+            if (currentUser?.email) {
+                setUser(currentUser);
+                try {
+                    const { data } = await axios.post(
+                        `${import.meta.env.VITE_API_URL}/jwt`,  // Ensure this is correct
+                        { email: currentUser?.email },
+                        { withCredentials: true }
+                    );
+                    console.log("JWT Response:", data); // ✅ Debug API response
+                } catch (error) {
+                    console.error("JWT Request Error:", error.response?.data || error.message);
+                }
+            } else {
+                setUser(currentUser);
+                try {
+                    const { data } = await axios.get(
+                        `${import.meta.env.VITE_API_URL}/logout`,
+                        { withCredentials: true }
+                    );
+                    console.log("Logout Response:", data);
+                } catch (error) {
+                    console.error("Logout Request Error:", error.response?.data || error.message);
+                }
+            }
+            setLoading(false);
+        });
+    
+        return () => unsubscribe();
+    }, []);
+    
 
-        })
-        return()=>{
-            unsub();
-        }
-    },[])
+
+
+
     const logout=()=>{
         return signOut(auth)
     }

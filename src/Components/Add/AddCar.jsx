@@ -90,7 +90,7 @@ const AddCar = () => {
     };
 
     return (
-        <div className="md:px-28 px-4 rounded-lg shadow-md max-w-screen-2xl mx-auto">
+        <div className="md:px-28 px-4 rounded-lg pt-24 shadow-md max-w-screen-2xl mx-auto">
             <h2 className="text-2xl font-bold mb-4">Add Car</h2>
             <form onSubmit={handleSubmit} className="space-y-4">
                 <div>

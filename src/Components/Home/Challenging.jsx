@@ -3,7 +3,7 @@ import { FaCar, FaOilCan, FaWrench, FaBatteryFull, FaTachometerAlt } from "react
 import { motion } from "framer-motion"; // Import Framer Motion
 
 const CarMaintenanceTips = () => {
-  const [activeCategory, setActiveCategory] = useState(null);
+  const [activeCategory, setActiveCategory] = useState("Engine Maintenance"); // Set default category
 
   const categories = [
     { id: 1, name: "Engine Maintenance" },
@@ -57,7 +57,7 @@ const CarMaintenanceTips = () => {
 
   return (
     <motion.div
-      className="bg-neutral text-neutral-content min-h-screen flex flex-col items-center py-10"
+      className="bg-neutral text-neutral-content my-7 flex flex-col items-center py-10"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
@@ -138,9 +138,7 @@ const CarMaintenanceTips = () => {
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 1 }}
       >
-        <h3 className="text-lg font-semibold">
-          {activeCategory || "Select a Category"}
-        </h3>
+        <h3 className="text-lg font-semibold">{activeCategory || "Select a Category"}</h3>
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4"
           initial={{ opacity: 0 }}

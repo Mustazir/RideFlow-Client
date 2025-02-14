@@ -106,7 +106,7 @@ const Details = () => {
     };
 
     return (
-        <div className="car-details max-w-4xl mx-auto p-6 rounded">
+        <div className="car-details max-w-4xl mx-auto p-6 pt-24 rounded">
             
             <img
                 src={imageUrl}

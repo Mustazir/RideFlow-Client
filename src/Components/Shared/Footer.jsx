@@ -1,5 +1,5 @@
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
-
+import logo from '../../assets/New folder/icons8-hatchback-100.png'
 const Footer = () => {
     return (
         <footer className="border-t-2 text-gray-500 py-16 mt-20">
@@ -9,7 +9,7 @@ const Footer = () => {
                     <div className="w-full md:w-1/3">
                         <div className="flex items-center space-x-3 mb-4">
                             <img
-                                src="/icons8-hatchback-100.png" 
+                                src={logo}
                                 alt="RideFlow"
                                 className="w-12 h-12"
                             />

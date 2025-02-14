@@ -97,7 +97,7 @@ const Mybooking = () => {
     };
 
     return (
-        <div className="p-6">
+        <div className="p-6 pt-24">
             <div className="overflow-x-auto mb-40">
                 <table className="min-w-full table-auto border-collapse">
                     <thead>

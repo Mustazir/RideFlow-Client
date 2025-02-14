@@ -110,7 +110,7 @@ const MyCars = () => {
     };
 
     return (
-        <div className="min-h-screen px-[10vw] text-black p-8">
+        <div className="min-h-screen px-[10vw] text-black p-8 pt-24">
 
             <div className="mb-8 flex justify-end">
                 <select
